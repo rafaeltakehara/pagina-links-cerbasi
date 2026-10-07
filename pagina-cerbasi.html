@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gustavo Cerbasi · links</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f0b08; --bg-2:#1a130d; --line:rgba(255,255,255,.09);
+  --gold:#d9a521; --gold-2:#f2c14e; --gold-ink:#2a1c03;
+  --text:#f6efe4; --muted:#a89b88;
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter Tight',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#050403;font-family:var(--sans);color:var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.page{max-width:440px;margin:0 auto;background:var(--bg);min-height:100vh;overflow:hidden;position:relative}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:640px}
+.hero img{position:absolute;left:0;top:0;width:100%;height:480px;object-fit:cover;object-position:50% 8%}
+.hero::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(15,11,8,.55) 0%,transparent 22%,transparent 40%,rgba(15,11,8,.7) 62%,var(--bg) 78%)}
+.top{position:absolute;top:0;left:0;right:0;z-index:2;padding:max(18px,env(safe-area-inset-top)) 20px 0;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;letter-spacing:.02em}
+.coin{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold-2),var(--gold) 60%,#8a6310);display:grid;place-items:center;color:var(--gold-ink);font:800 12px var(--serif)}
+.cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 20px 8px}
+.kick{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);margin-bottom:10px}
+.cap h1{font-family:var(--serif);font-weight:800;font-size:44px;line-height:.98;letter-spacing:-.02em;margin-bottom:12px}
+.cap h1 em{font-style:normal;color:var(--gold-2)}
+.cap p{font-size:15px;line-height:1.4;color:#d8cebf;max-width:300px;margin-bottom:18px}
+.cta{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,var(--gold-2),var(--gold));color:var(--gold-ink);font-weight:700;font-size:16.5px;padding:16px 20px;border-radius:14px;box-shadow:0 14px 30px -12px rgba(217,165,33,.55)}
+.cta svg{width:20px;height:20px}
+
+/* ---------- seções ---------- */
+section{padding:30px 0 0}
+.sh{display:flex;align-items:baseline;justify-content:space-between;padding:0 20px 12px}
+.sh h2{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:-.01em}
+.sh span{font-size:12px;color:var(--muted)}
+
+/* trilho estilo Netflix */
+.rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 4px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.tile{flex:0 0 78%;scroll-snap-align:start;position:relative;border-radius:16px;overflow:hidden;background:var(--bg-2);aspect-ratio:16/9;transition:transform .2s}
+.tile:active{transform:scale(.98)}
+.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.tile.poster{flex-basis:38%;aspect-ratio:auto}
+.tile .tag{position:absolute;left:10px;top:10px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(15,11,8,.78);backdrop-filter:blur(6px);padding:5px 8px;border-radius:6px;color:var(--gold-2)}
+.tile .ttl{position:absolute;left:0;right:0;bottom:0;padding:34px 12px 11px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.88));font-weight:600;font-size:14px;line-height:1.2}
+.play{position:absolute;right:10px;top:10px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
+.play::after{content:"";border-left:9px solid #111;border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:2px}
+.poster{display:flex;flex-direction:column}
+.poster img{flex:1;min-height:0}
+
+/* curso principal */
+.feature{display:block;margin:0 20px;border-radius:18px;padding:18px;background:linear-gradient(135deg,#2a1d0e,#171009);border:1px solid rgba(217,165,33,.28);position:relative;overflow:hidden}
+.feature::before{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(242,193,78,.28),transparent 70%)}
+.feature small{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-2)}
+.feature h3{font-family:var(--serif);font-weight:800;font-size:26px;line-height:1;margin:8px 0 6px;letter-spacing:-.01em}
+.feature p{font-size:13.5px;color:var(--muted);margin-bottom:14px}
+.feature b{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--gold-2);font-weight:600}
+
+/* lista */
+.list{margin:0 20px;border-radius:16px;background:var(--bg-2);border:1px solid var(--line);overflow:hidden}
+.row{display:flex;align-items:center;gap:14px;padding:15px 16px;font-weight:600;font-size:15.5px}
+.row+.row{border-top:1px solid var(--line)}
+.row .ic{width:36px;height:36px;border-radius:10px;background:rgba(217,165,33,.12);color:var(--gold-2);display:grid;place-items:center;flex:none}
+.row .ic svg{width:19px;height:19px}
+.row .go{margin-left:auto;color:var(--muted);width:18px;height:18px}
+.row small{display:block;font-weight:500;font-size:12.5px;color:var(--muted);margin-top:1px}
+.row:active{background:rgba(255,255,255,.04)}
+
+/* redes */
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 20px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border-radius:999px;border:1px solid var(--line);background:var(--bg-2);font-size:14px;font-weight:600}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+
+footer{padding:36px 20px calc(30px + env(safe-area-inset-bottom));text-align:center;font-size:11.5px;color:#6f6455;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <img src="perfil.jpg" alt="Gustavo Cerbasi">
+    <div class="top"><span class="coin">$</span> Gustavo Cerbasi</div>
+    <div class="cap">
+      <span class="kick">Educação financeira</span>
+      <h1>Dinheiro que <em>rende</em> paz.</h1>
+      <p>Cursos, livros e vídeos do consultor financeiro que você já acompanha.</p>
+      <a class="cta" href="https://ef.gustavocerbasi.com.br/ef25/curso/">Quero o Equilíbrio Financeiro
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <section>
+    <div class="sh"><h2>Em destaque</h2><span>deslize →</span></div>
+    <div class="rail">
+      <a class="tile" href="https://gustavocerbasi.site/if21-ig-bio-espera">
+        <img src="if-espera.png" alt="Curso Inteligência Financeira: lista de espera">
+      </a>
+      <a class="tile" href="https://i.sendflow.pro/l/serie-adeus-aponsentadoria">
+        <img src="adeus-aposentadoria.jpg" alt="Série Adeus, Aposentadoria">
+        <span class="tag">Série</span>
+        <span class="ttl">Adeus, Aposentadoria</span>
+      </a>
+      <a class="tile" href="https://www.youtube.com/watch?v=KwS8gCFWVFA">
+        <img src="seguro-de-vida.jpg" alt="Seguro de vida: será que você precisa mesmo?">
+        <span class="play"></span>
+        <span class="ttl">Seguro de vida: será que você precisa mesmo?</span>
+      </a>
+      <a class="tile poster" href="https://www.amazon.com.br/dp/6553240302">
+        <img src="quadrinhos.jpg" alt="Dez Bons Conselhos do Meu Pai (quadrinhos)">
+        <span class="ttl">10 bons conselhos do meu pai</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <a class="feature" href="https://ef.gustavocerbasi.com.br/ef25/curso/">
+      <small>Curso</small>
+      <h3>Equilíbrio<br>Financeiro</h3>
+      <p>Organize a vida financeira com o método do Cerbasi.</p>
+      <b>Conhecer o curso
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </b>
+    </a>
+  </section>
+
+  <section>
+    <div class="sh"><h2>Conheça o Cerbasi</h2></div>
+    <div class="list">
+      <a class="row" href="https://www.gustavocerbasi.com.br/consultor-financeiro/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></span>
+        <span>Quem é Gustavo Cerbasi</span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a class="row" href="https://www.gustavocerbasi.com.br/livros-educacao-financeira/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19a2 2 0 012-2h13"/></svg></span>
+        <span>Livros</span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a class="row" href="https://gustavocerbasi.com.br/palestras/contrate">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></span>
+        <span>Palestras</span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a class="row" href="https://www.gustavocerbasi.com.br/contato-consultor-financeiro/imprensa/">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+        <span>Contato para imprensa</span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>Assista e ouça</h2></div>
+    <div class="chips">
+      <a class="chip" href="https://www.youtube.com/@GustavocerbasiBr"><i></i>YouTube</a>
+      <a class="chip" href="https://www.youtube.com/watch?v=NkNxzFx5Xhg&list=PLPBLaFNYOx7sUXTggRFLm8iuC8I6blnB_"><i></i>Playlist Casa Inteligente</a>
+      <a class="chip" href="https://open.spotify.com/show/2VqGZVZmUnEqieAp7kwPKO"><i></i>Podcast no Spotify</a>
+      <a class="chip" href="https://www.tiktok.com/@gustavocerbasi"><i></i>TikTok</a>
+      <a class="chip" href="https://www.linkedin.com/in/gustavocerbasi/"><i></i>LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>Redesign não oficial, estudo de design por @rafael.takehara.<br>Imagens e nome pertencem a Gustavo Cerbasi.</footer>
+</div>
+</body>
+</html>
