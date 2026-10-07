@@ -4,161 +4,213 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#121212">
 <title>Gustavo Cerbasi · links</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0f0b08; --bg-2:#1a130d; --line:rgba(255,255,255,.09);
-  --gold:#d9a521; --gold-2:#f2c14e; --gold-ink:#2a1c03;
-  --text:#f6efe4; --muted:#a89b88;
-  --serif:'Fraunces',Georgia,serif; --sans:'Inter Tight',system-ui,sans-serif;
+  --bg:#121212; --bg-2:#1c1c1e; --bg-3:#26262a; --line:rgba(255,255,255,.08);
+  --red:#e50914; --red-2:#ff2a36; --blue:#1a8cff; --star:#f5c518;
+  --text:#ffffff; --muted:#8e8e93;
+  --sans:'Outfit',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#050403;font-family:var(--sans);color:var(--text);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{background:#050505;font-family:var(--sans);color:var(--text);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.page{max-width:440px;margin:0 auto;background:var(--bg);min-height:100vh;overflow:hidden;position:relative}
+.page{max-width:440px;margin:0 auto;min-height:100vh;position:relative;overflow:hidden;
+  background:radial-gradient(120% 60% at 50% 0%,#2a2a2e 0%,var(--bg) 55%) var(--bg)}
 
-/* ---------- hero ---------- */
-.hero{position:relative;height:640px}
-.hero img{position:absolute;left:0;top:0;width:100%;height:480px;object-fit:cover;object-position:50% 8%}
-.hero::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(15,11,8,.55) 0%,transparent 22%,transparent 40%,rgba(15,11,8,.7) 62%,var(--bg) 78%)}
-.top{position:absolute;top:0;left:0;right:0;z-index:2;padding:max(18px,env(safe-area-inset-top)) 20px 0;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;letter-spacing:.02em}
-.coin{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold-2),var(--gold) 60%,#8a6310);display:grid;place-items:center;color:var(--gold-ink);font:800 12px var(--serif)}
-.cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 20px 8px}
-.kick{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);margin-bottom:10px}
-.cap h1{font-family:var(--serif);font-weight:800;font-size:44px;line-height:.98;letter-spacing:-.02em;margin-bottom:12px}
-.cap h1 em{font-style:normal;color:var(--gold-2)}
-.cap p{font-size:15px;line-height:1.4;color:#d8cebf;max-width:300px;margin-bottom:18px}
-.cta{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,var(--gold-2),var(--gold));color:var(--gold-ink);font-weight:700;font-size:16.5px;padding:16px 20px;border-radius:14px;box-shadow:0 14px 30px -12px rgba(217,165,33,.55)}
-.cta svg{width:20px;height:20px}
+/* ---------- topo: menu + "notch" com logo ---------- */
+.top{position:relative;z-index:3;height:76px;display:flex;align-items:flex-start;justify-content:center}
+.burger{position:absolute;left:22px;top:max(26px,env(safe-area-inset-top));display:flex;flex-direction:column;gap:5px;padding:4px}
+.burger i{display:block;height:2.5px;border-radius:2px;background:#6c6c70}
+.burger i:nth-child(1){width:22px}.burger i:nth-child(2){width:16px}.burger i:nth-child(3){width:11px}
+.notch{width:92px;height:62px;background:#0a0a0a;border-radius:0 0 26px 26px;display:grid;place-items:center;position:relative}
+.notch::before,.notch::after{content:"";position:absolute;top:0;width:24px;height:24px;background:radial-gradient(circle at 0 100%,transparent 23px,#0a0a0a 24px)}
+.notch::before{left:-24px;transform:scaleX(-1)}
+.notch::after{right:-24px}
+.logo{font-weight:800;font-size:30px;letter-spacing:-.04em;color:var(--red);text-shadow:0 0 18px rgba(229,9,20,.7),0 0 4px rgba(229,9,20,.9)}
+
+/* ---------- headline ---------- */
+.headline{text-align:center;text-transform:uppercase;line-height:.9;font-weight:800;letter-spacing:-.03em;margin:14px 0 18px;position:relative;z-index:2}
+.headline .l{display:flex;justify-content:center;align-items:flex-end;gap:6px}
+.headline .big{font-size:54px}
+.headline .sm{font-size:21px;letter-spacing:-.01em;padding-bottom:5px}
+.headline .red{color:var(--red)}
+.headline .l2{margin-left:-28px}
+.headline .l3{font-size:52px}
+
+/* ---------- palco 3D ---------- */
+.stage{position:relative;height:430px;perspective:900px;margin-top:-6px}
+.floor{position:absolute;left:-10%;right:-10%;bottom:-6px;height:160px;
+  background:
+    linear-gradient(90deg,transparent 49.8%,rgba(255,255,255,.08) 50%,transparent 50.2%),
+    linear-gradient(0deg,rgba(255,255,255,.07) 1px,transparent 1px) 0 0/100% 40px,
+    linear-gradient(180deg,#19191b,#0e0e0f);
+  transform:perspective(260px) rotateX(48deg);transform-origin:50% 100%;opacity:.9}
+.card{position:absolute;left:50%;top:0;width:62%;height:370px;margin-left:-31%;border-radius:22px;overflow:hidden;
+  background:var(--bg-3);box-shadow:0 30px 60px -20px rgba(0,0,0,.9);
+  transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .55s,filter .55s;cursor:pointer;will-change:transform}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55))}
+.card.cur{transform:translateZ(0);z-index:3}
+.card.prev{transform:translateX(-78%) translateZ(-160px) rotateY(38deg);z-index:2;filter:brightness(.6)}
+.card.next{transform:translateX(78%) translateZ(-160px) rotateY(-38deg);z-index:2;filter:brightness(.6)}
+.card.hide{transform:translateZ(-400px);opacity:0;z-index:1;pointer-events:none}
+
+.info{position:absolute;left:50%;bottom:0;z-index:5;width:76%;transform:translateX(-50%);
+  background:rgba(38,38,42,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:16px 16px 15px 18px;
+  display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:center;box-shadow:0 20px 40px -18px #000}
+.info h2{font-size:21px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
+.info p{grid-column:1;font-size:13.5px;color:var(--muted)}
+.info p b{color:#d1d1d6;font-weight:500}
+.badge{justify-self:end;display:inline-flex;align-items:center;gap:4px;background:rgba(0,0,0,.35);border-radius:9px;padding:5px 9px;font-size:13px;font-weight:600}
+.badge svg{width:13px;height:13px;color:var(--star)}
+.pill{justify-self:end;background:linear-gradient(180deg,#3aa0ff,var(--blue));color:#fff;font-weight:600;font-size:14.5px;padding:7px 16px;border-radius:999px;box-shadow:0 0 0 2px rgba(255,255,255,.18) inset,0 8px 18px -8px rgba(26,140,255,.9);white-space:nowrap}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:16px}
+.dots i{width:6px;height:6px;border-radius:3px;background:#3a3a3c;transition:width .3s,background .3s}
+.dots i.on{width:18px;background:var(--red)}
 
 /* ---------- seções ---------- */
 section{padding:30px 0 0}
-.sh{display:flex;align-items:baseline;justify-content:space-between;padding:0 20px 12px}
-.sh h2{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:-.01em}
-.sh span{font-size:12px;color:var(--muted)}
+.sh{display:flex;align-items:center;justify-content:space-between;padding:0 22px 14px}
+.sh h3{font-size:21px;font-weight:600;letter-spacing:-.01em}
+.sh a,.sh span{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--muted)}
+.sh .tri{border-left:6px solid var(--muted);border-top:5px solid transparent;border-bottom:5px solid transparent}
 
-/* trilho estilo Netflix */
-.rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 4px;scrollbar-width:none}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 22px 6px;scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
-.tile{flex:0 0 78%;scroll-snap-align:start;position:relative;border-radius:16px;overflow:hidden;background:var(--bg-2);aspect-ratio:16/9;transition:transform .2s}
-.tile:active{transform:scale(.98)}
+.tile{flex:0 0 66%;scroll-snap-align:start;position:relative;height:250px;border-radius:18px;overflow:hidden;background:var(--bg-2);transition:transform .2s}
+.tile:active{transform:scale(.97)}
 .tile img{width:100%;height:100%;object-fit:cover;display:block}
-.tile.poster{flex-basis:38%;aspect-ratio:auto}
-.tile .tag{position:absolute;left:10px;top:10px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(15,11,8,.78);backdrop-filter:blur(6px);padding:5px 8px;border-radius:6px;color:var(--gold-2)}
-.tile .ttl{position:absolute;left:0;right:0;bottom:0;padding:34px 12px 11px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.88));font-weight:600;font-size:14px;line-height:1.2}
-.play{position:absolute;right:10px;top:10px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
-.play::after{content:"";border-left:9px solid #111;border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:2px}
-.poster{display:flex;flex-direction:column}
-.poster img{flex:1;min-height:0}
+.tile .q{position:absolute;left:12px;top:12px;background:#fff;color:#111;font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:3px 5px;border-radius:5px}
+.tile .meta{position:absolute;left:8px;right:8px;bottom:8px;padding:10px 12px 9px;border-radius:13px;
+  background:linear-gradient(90deg,rgba(40,30,28,.88),rgba(40,30,28,.35));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tile .meta b{display:block;font-size:17px;font-weight:600;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:40px}
+.tile .meta small{display:flex;align-items:center;gap:6px;font-size:12px;color:#aeaeb2;margin-top:3px}
+.tile .meta small svg{width:12px;height:12px;color:var(--star)}
+.play{position:absolute;right:14px;bottom:62px;width:38px;height:38px;border-radius:12px;background:#fff;display:grid;place-items:center;box-shadow:0 6px 14px -4px rgba(0,0,0,.6)}
+.play::before{content:"";width:24px;height:24px;border-radius:50%;background:var(--red)}
+.play::after{content:"";position:absolute;border-left:8px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
 
-/* curso principal */
-.feature{display:block;margin:0 20px;border-radius:18px;padding:18px;background:linear-gradient(135deg,#2a1d0e,#171009);border:1px solid rgba(217,165,33,.28);position:relative;overflow:hidden}
-.feature::before{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(242,193,78,.28),transparent 70%)}
-.feature small{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-2)}
-.feature h3{font-family:var(--serif);font-weight:800;font-size:26px;line-height:1;margin:8px 0 6px;letter-spacing:-.01em}
-.feature p{font-size:13.5px;color:var(--muted);margin-bottom:14px}
-.feature b{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--gold-2);font-weight:600}
-
-/* lista */
-.list{margin:0 20px;border-radius:16px;background:var(--bg-2);border:1px solid var(--line);overflow:hidden}
-.row{display:flex;align-items:center;gap:14px;padding:15px 16px;font-weight:600;font-size:15.5px}
-.row+.row{border-top:1px solid var(--line)}
-.row .ic{width:36px;height:36px;border-radius:10px;background:rgba(217,165,33,.12);color:var(--gold-2);display:grid;place-items:center;flex:none}
-.row .ic svg{width:19px;height:19px}
-.row .go{margin-left:auto;color:var(--muted);width:18px;height:18px}
-.row small{display:block;font-weight:500;font-size:12.5px;color:var(--muted);margin-top:1px}
-.row:active{background:rgba(255,255,255,.04)}
+/* conheça: grade 2x2 */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 22px}
+.box{position:relative;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:16px 14px 14px;min-height:118px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s}
+.box:active{transform:scale(.97)}
+.box .ic{width:40px;height:40px;border-radius:13px;background:rgba(229,9,20,.14);color:var(--red-2);display:grid;place-items:center}
+.box .ic svg{width:20px;height:20px}
+.box b{font-size:15.5px;font-weight:600;line-height:1.2;margin-top:14px}
+.box .go{position:absolute;right:12px;top:14px;width:16px;height:16px;color:#5a5a5e}
 
 /* redes */
-.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 20px}
-.chip{display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border-radius:999px;border:1px solid var(--line);background:var(--bg-2);font-size:14px;font-weight:600}
-.chip i{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 22px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);font-size:14px;font-weight:500}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--red)}
 
-footer{padding:36px 20px calc(30px + env(safe-area-inset-bottom));text-align:center;font-size:11.5px;color:#6f6455;line-height:1.5}
+footer{padding:34px 22px 130px;text-align:center;font-size:11.5px;color:#5c5c60;line-height:1.5}
+
+/* ---------- barra inferior flutuante ---------- */
+.dock{position:fixed;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:20;
+  width:min(400px,calc(100% - 28px));height:74px;border-radius:28px;
+  background:rgba(44,44,48,.78);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.07);box-shadow:0 18px 40px -12px rgba(0,0,0,.9);
+  display:flex;align-items:center;justify-content:space-around;padding:0 14px}
+.dock a{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;color:#6c6c70;transition:color .2s,background .2s}
+.dock a svg{width:25px;height:25px}
+.dock a.on{background:#111113;color:#fff;box-shadow:0 0 0 6px rgba(0,0,0,.25)}
 </style>
 </head>
 <body>
-<div class="page">
+<div class="page" id="topo">
 
-  <header class="hero">
-    <img src="perfil.jpg" alt="Gustavo Cerbasi">
-    <div class="top"><span class="coin">$</span> Gustavo Cerbasi</div>
-    <div class="cap">
-      <span class="kick">Educação financeira</span>
-      <h1>Dinheiro que <em>rende</em> paz.</h1>
-      <p>Cursos, livros e vídeos do consultor financeiro que você já acompanha.</p>
-      <a class="cta" href="https://ef.gustavocerbasi.com.br/ef25/curso/">Quero o Equilíbrio Financeiro
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+  <div class="top">
+    <a class="burger" href="#conheca" aria-label="Menu"><i></i><i></i><i></i></a>
+    <div class="notch"><span class="logo">GC</span></div>
+  </div>
+
+  <h1 class="headline">
+    <span class="l"><span class="big">Dinheiro</span><span class="sm">que</span></span>
+    <span class="l l2"><span class="sm">só</span><span class="big red">Rende</span></span>
+    <span class="l l3">Paz</span>
+  </h1>
+
+  <!-- carrossel 3D -->
+  <div class="stage" id="stage">
+    <div class="floor"></div>
+    <div class="card" data-i="0"><img src="perfil.jpg" alt="Gustavo Cerbasi" style="object-position:50% 20%"></div>
+    <div class="card" data-i="1"><img src="if-espera.png" alt="Curso Inteligência Financeira" style="object-position:76% 50%"></div>
+    <div class="card" data-i="2"><img src="adeus-aposentadoria.jpg" alt="Série Adeus, Aposentadoria" style="object-position:50% 50%"></div>
+    <div class="card" data-i="3"><img src="quadrinhos.jpg" alt="Dez Bons Conselhos do Meu Pai" style="object-position:50% 50%"></div>
+
+    <div class="info">
+      <h2 id="i-title">Equilíbrio Financeiro</h2>
+      <span class="badge" id="i-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.8 9.4 9 8.6z"/></svg><span id="i-tag">Curso</span></span>
+      <p id="i-sub">Método: <b>Cerbasi</b></p>
+      <a class="pill" id="i-link" href="https://ef.gustavocerbasi.com.br/ef25/curso/">Quero</a>
     </div>
-  </header>
+  </div>
+  <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div>
 
   <section>
-    <div class="sh"><h2>Em destaque</h2><span>deslize →</span></div>
+    <div class="sh"><h3>Em destaque</h3><span>Deslize <i class="tri"></i></span></div>
     <div class="rail">
-      <a class="tile" href="https://gustavocerbasi.site/if21-ig-bio-espera">
-        <img src="if-espera.png" alt="Curso Inteligência Financeira: lista de espera">
+      <a class="tile" href="https://www.youtube.com/watch?v=KwS8gCFWVFA">
+        <img src="seguro-de-vida.jpg" alt="Seguro de vida: será que você precisa mesmo?" style="object-position:30% 50%">
+        <span class="q">Vídeo</span>
+        <span class="play"></span>
+        <span class="meta"><b>Seguro de vida</b><small>Será que você precisa mesmo?</small></span>
       </a>
       <a class="tile" href="https://i.sendflow.pro/l/serie-adeus-aponsentadoria">
         <img src="adeus-aposentadoria.jpg" alt="Série Adeus, Aposentadoria">
-        <span class="tag">Série</span>
-        <span class="ttl">Adeus, Aposentadoria</span>
-      </a>
-      <a class="tile" href="https://www.youtube.com/watch?v=KwS8gCFWVFA">
-        <img src="seguro-de-vida.jpg" alt="Seguro de vida: será que você precisa mesmo?">
+        <span class="q">Série</span>
         <span class="play"></span>
-        <span class="ttl">Seguro de vida: será que você precisa mesmo?</span>
+        <span class="meta"><b>Adeus, Aposentadoria</b><small>Entre no grupo da série</small></span>
       </a>
-      <a class="tile poster" href="https://www.amazon.com.br/dp/6553240302">
-        <img src="quadrinhos.jpg" alt="Dez Bons Conselhos do Meu Pai (quadrinhos)">
-        <span class="ttl">10 bons conselhos do meu pai</span>
+      <a class="tile" href="https://gustavocerbasi.site/if21-ig-bio-espera">
+        <img src="if-espera.png" alt="Curso Inteligência Financeira: lista de espera" style="object-position:78% 50%">
+        <span class="q">Curso</span>
+        <span class="meta"><b>Inteligência Financeira</b><small>Lista de espera</small></span>
+      </a>
+      <a class="tile" href="https://www.amazon.com.br/dp/6553240302">
+        <img src="quadrinhos.jpg" alt="Dez Bons Conselhos do Meu Pai (quadrinhos)" style="background:#e9e4dc">
+        <span class="q">Livro</span>
+        <span class="meta"><b>10 bons conselhos do meu pai</b><small>Em quadrinhos · Amazon</small></span>
       </a>
     </div>
   </section>
 
-  <section>
-    <a class="feature" href="https://ef.gustavocerbasi.com.br/ef25/curso/">
-      <small>Curso</small>
-      <h3>Equilíbrio<br>Financeiro</h3>
-      <p>Organize a vida financeira com o método do Cerbasi.</p>
-      <b>Conhecer o curso
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </b>
-    </a>
-  </section>
-
-  <section>
-    <div class="sh"><h2>Conheça o Cerbasi</h2></div>
-    <div class="list">
-      <a class="row" href="https://www.gustavocerbasi.com.br/consultor-financeiro/">
+  <section id="conheca">
+    <div class="sh"><h3>Conheça o Cerbasi</h3><a href="https://www.gustavocerbasi.com.br/">Site <i class="tri"></i></a></div>
+    <div class="grid">
+      <a class="box" href="https://www.gustavocerbasi.com.br/consultor-financeiro/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></span>
-        <span>Quem é Gustavo Cerbasi</span>
-        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+        <b>Quem é Gustavo Cerbasi</b>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </a>
-      <a class="row" href="https://www.gustavocerbasi.com.br/livros-educacao-financeira/">
+      <a class="box" href="https://www.gustavocerbasi.com.br/livros-educacao-financeira/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19a2 2 0 012-2h13"/></svg></span>
-        <span>Livros</span>
-        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+        <b>Livros</b>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </a>
-      <a class="row" href="https://gustavocerbasi.com.br/palestras/contrate">
+      <a class="box" href="https://gustavocerbasi.com.br/palestras/contrate">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></span>
-        <span>Palestras</span>
-        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+        <b>Palestras</b>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </a>
-      <a class="row" href="https://www.gustavocerbasi.com.br/contato-consultor-financeiro/imprensa/">
+      <a class="box" href="https://www.gustavocerbasi.com.br/contato-consultor-financeiro/imprensa/">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-        <span>Contato para imprensa</span>
-        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>
+        <b>Contato para imprensa</b>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </a>
     </div>
   </section>
 
   <section>
-    <div class="sh"><h2>Assista e ouça</h2></div>
+    <div class="sh"><h3>Assista e ouça</h3></div>
     <div class="chips">
       <a class="chip" href="https://www.youtube.com/@GustavocerbasiBr"><i></i>YouTube</a>
       <a class="chip" href="https://www.youtube.com/watch?v=NkNxzFx5Xhg&list=PLPBLaFNYOx7sUXTggRFLm8iuC8I6blnB_"><i></i>Playlist Casa Inteligente</a>
@@ -170,5 +222,52 @@ footer{padding:36px 20px calc(30px + env(safe-area-inset-bottom));text-align:cen
 
   <footer>Redesign não oficial, estudo de design por @rafael.takehara.<br>Imagens e nome pertencem a Gustavo Cerbasi.</footer>
 </div>
+
+<nav class="dock">
+  <a class="on" href="#topo" aria-label="Início"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.2l8.5 7.1V20a1.5 1.5 0 01-1.5 1.5h-4.2v-6h-5.6v6H5A1.5 1.5 0 013.5 20v-9.7z"/></svg></a>
+  <a href="https://www.youtube.com/@GustavocerbasiBr" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.6 2.6 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.6 2.6 0 002.4 7.2 27 27 0 002 12a27 27 0 00.4 4.8 2.6 2.6 0 001.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 001.8-1.8A27 27 0 0022 12a27 27 0 00-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+  <a href="https://open.spotify.com/show/2VqGZVZmUnEqieAp7kwPKO" aria-label="Podcast"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.6 14.4a.8.8 0 01-1.1.3c-2.9-1.8-6.6-2.2-10.9-1.2a.8.8 0 11-.4-1.5c4.7-1.1 8.8-.6 12.1 1.4.4.2.5.7.3 1zm1.2-2.8a1 1 0 01-1.3.3c-3.3-2-8.4-2.6-12.3-1.4a1 1 0 11-.6-1.9c4.5-1.4 10.1-.7 13.9 1.6.5.3.6.9.3 1.4zm.1-2.9C14 8.4 7.5 8.2 3.8 9.3a1.2 1.2 0 11-.7-2.3c4.3-1.3 11.4-1 15.9 1.6a1.2 1.2 0 01-1.1 2.1z"/></svg></a>
+  <a href="https://www.gustavocerbasi.com.br/livros-educacao-financeira/" aria-label="Livros"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.1C.9 8.6 2.8 4.5 6.6 4.5c2.2 0 3.7 1.2 5.4 3.1 1.7-1.9 3.2-3.1 5.4-3.1 3.8 0 5.7 4.1 4.2 7.4C19.5 16.4 12 21 12 21z"/></svg></a>
+</nav>
+
+<script>
+(function(){
+  var items=[
+    {t:'Equilíbrio Financeiro',tag:'Curso',sub:'Método: <b>Cerbasi</b>',cta:'Quero',url:'https://ef.gustavocerbasi.com.br/ef25/curso/'},
+    {t:'Inteligência Financeira',tag:'Curso',sub:'Lista de espera: <b>aberta</b>',cta:'Entrar',url:'https://gustavocerbasi.site/if21-ig-bio-espera'},
+    {t:'Adeus, Aposentadoria',tag:'Série',sub:'Série: <b>gratuita</b>',cta:'Assistir',url:'https://i.sendflow.pro/l/serie-adeus-aponsentadoria'},
+    {t:'10 bons conselhos',tag:'Livro',sub:'Em <b>quadrinhos</b>',cta:'Comprar',url:'https://www.amazon.com.br/dp/6553240302'}
+  ];
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  var dots=[].slice.call(document.querySelectorAll('#dots i'));
+  var n=cards.length,cur=0;
+  var $=function(id){return document.getElementById(id)};
+  function render(){
+    cards.forEach(function(c,i){
+      var d=(i-cur+n)%n;
+      c.className='card '+(d===0?'cur':d===1?'next':d===n-1?'prev':'hide');
+    });
+    dots.forEach(function(d,i){d.className=i===cur?'on':''});
+    var it=items[cur];
+    $('i-title').textContent=it.t;$('i-tag').textContent=it.tag;
+    $('i-sub').innerHTML=it.sub;$('i-link').textContent=it.cta;$('i-link').href=it.url;
+  }
+  function go(k){cur=(cur+k+n)%n;render()}
+  cards.forEach(function(c){
+    c.addEventListener('click',function(){
+      if(c.classList.contains('next'))go(1);
+      else if(c.classList.contains('prev'))go(-1);
+      else location.href=items[cur].url;
+    });
+  });
+  var x0=null,stage=$('stage');
+  stage.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  stage.addEventListener('touchend',function(e){
+    if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;
+    if(Math.abs(dx)>40)go(dx<0?1:-1);
+  });
+  render();
+})();
+</script>
 </body>
 </html>
